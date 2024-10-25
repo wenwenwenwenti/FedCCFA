@@ -45,7 +45,7 @@ All hyperparameters can be set in ./configs/*.yaml. Common hyperparameters in ou
 |----------------|------------------------------------------|----------------------------------------------------------|
 | client_num     | 20 or 100                                | 20 with full participation or 100 with 20% participation |
 | sample_ratio   | 1 or 0.2                                 | full participation or 20% participation                  |
-| dataset        | Fashion-MNIST or CIFAR10 or CINIC-10     | Three datasets in our experiments                        |
+| dataset        | Fashion-MNIST or CIFAR-10 or CINIC-10    | Three datasets in our experiments                        |
 | alpha          | 0.1 or 0.5                               | concentration parameter in Dirichlet distribution        |
 | drift_pattern  | false / sudden / incremental / recurrent | concept drift pattern                                    |
 
@@ -53,6 +53,12 @@ All hyperparameters can be set in ./configs/*.yaml. Common hyperparameters in ou
 > value you want.
 
 For the descriptions of other hyperparameters, please refer to our paper for more details.
+
+### Datasets
+
+Three datasets (Fashion-MNIST, CIFAR-10 and CINIC-10) are used in our experiments. You can download these datasets and put them in `./data`.
+
+For other datasets, you can download them and implement data distribution in `./utils/gen_dataset.py`.
 
 ### Example for FedCCFA under sudden drift setting
 
