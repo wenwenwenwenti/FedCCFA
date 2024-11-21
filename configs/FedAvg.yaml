@@ -5,7 +5,7 @@ seed: 0
 device: cpu
 
 dataset: Fashion-MNIST
-partition: hetero
+partition: homo
 alpha: 0.5
 drift_pattern: false
 
