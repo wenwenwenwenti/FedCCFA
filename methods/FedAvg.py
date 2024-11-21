@@ -1,5 +1,6 @@
 import yaml
 import json
+from tqdm import tqdm
 
 from entities.base import Client, Server
 from utils.drift import sudden_drift, incremental_drift
@@ -24,7 +25,7 @@ if __name__ == "__main__":
     server = Server(args)
     server.get_client_data_size(clients)
 
-    for _round in range(args["rounds"]):
+    for _round in tqdm(range(args["rounds"])):
         if args["drift_pattern"] == "sudden" and _round == 100:
             sudden_drift(clients, global_test_sets, _round)
         elif args["drift_pattern"] == "recurrent" and _round in [100, 150]:
