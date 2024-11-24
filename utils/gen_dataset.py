@@ -92,7 +92,20 @@ def distribute_dataset(name, client_num, partition, alpha, seed):
     :param seed: Random seed.
     :return: Dict[client_id, dataset] for training set and test set.
     """
-    if name == "Fashion-MNIST":
+    if name == "MNIST":
+        train_set = datasets.MNIST(root="../data", train=True, download=True)
+        train_transform = transforms.Compose([
+            transforms.ToPILImage(),
+            transforms.ToTensor(),
+            transforms.Normalize((0.1307,), (0.3081,))
+        ])
+        test_set = datasets.MNIST(root="../data", train=False, download=True)
+        test_transform = transforms.Compose([
+            transforms.ToPILImage(),
+            transforms.ToTensor(),
+            transforms.Normalize((0.1307,), (0.3081,))
+        ])
+    elif name == "Fashion-MNIST":
         train_set = datasets.FashionMNIST(root="../data", train=True, download=True)
         train_transform = transforms.Compose([
             transforms.ToPILImage(),

@@ -3,7 +3,7 @@ import torch.nn as nn
 
 def get_model(dataset_name, model):
     if model == "CNN":
-        if dataset_name in ["Fashion-MNIST"]:
+        if dataset_name in ["MNIST", "Fashion-MNIST"]:
             return FashionMNISTCNN()
         elif dataset_name in ["CIFAR10", "CINIC-10"]:
             return CifarCNN()
