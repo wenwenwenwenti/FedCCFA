@@ -2,7 +2,7 @@ algorithm: FedAvg
 client_num: 100
 sample_ratio: 0.2
 seed: 0
-device: cpu
+device: cuda
 
 dataset: Fashion-MNIST
 partition: homo
