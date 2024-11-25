@@ -5,12 +5,12 @@ from tqdm import tqdm
 from entities.base import Client, Server
 from utils.drift import sudden_drift, incremental_drift
 from utils.gen_dataset import distribute_dataset
+from utils.set_args import set_arguments_with_yaml
 
 if __name__ == "__main__":
     # load configuration
-    with open("../configs/FedAvg.yaml", 'r') as f:
-        args = yaml.load(f, Loader=yaml.FullLoader)
-        print(json.dumps(args, indent=4))
+    args = set_arguments_with_yaml("../configs/FedAvg.yaml")
+    print(json.dumps(args, indent=4))
 
     # initialize clients and server
     client_train_set, client_test_set, global_test_sets = distribute_dataset(
